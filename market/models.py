@@ -1,12 +1,17 @@
-from market import db, login_manager
+#from market import login_manager
 from market import bcrypt
-from flask_login import UserMixin
+#from flask_login import UserMixin
+'''mycursor=mydb.cursor()
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    user_id=int(user_id)
+    sql="SELECT * from user where id=user_id"
+    mycursor.execute(sql)
+    myresult=mycursor.fetchall()[0][0]
+    #return User.query.get(int(user_id))
 
-class User(db.Model, UserMixin):
+class User(db, UserMixin):
     id = db.Column(db.Integer(), primary_key=True)
     username = db.Column(db.String(length=30), nullable=False, unique=True)
     email_address = db.Column(db.String(length=50), nullable=False, unique=True)
@@ -56,4 +61,4 @@ class Item(db.Model):
     def sell(self, user):
         self.owner = None
         user.budget += self.price
-        db.session.commit()
+        db.session.commit()'''
